@@ -1,0 +1,5 @@
+.DS_Store
+src/egret/**/*.js
+src/egret/**/**/*.js
+src/extension/**/*.js
+src/extension/**/**/*.js
