@@ -3,3 +3,6 @@ src/egret/**/*.js
 src/egret/**/**/*.js
 src/extension/**/*.js
 src/extension/**/**/*.js
+tools/renders/main/libs
+tools/renders/main/wingProperties.json
+tools/renders/main/.wing

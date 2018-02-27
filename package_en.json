@@ -1,6 +1,6 @@
 {
   "name": "egret",
-  "version": "5.0.15",
+  "version": "5.1.5",
   "private": true,
   "author": "egret-labs",
   "bin": {
@@ -127,10 +127,6 @@
           {
             "path": "native/NativeXML.ts",
             "platform": "native"
-          },
-          {
-            "path": "web/WebBitmapData.ts",
-            "platform": "web"
           },
           {
             "path": "external/web/WebExternalInterface.ts",
@@ -285,14 +281,12 @@
         "dependencies": []
       },
       {
-        "name": "res",
-        "description": "resource lib",
-        "description_en": "resource lib",
+        "name": "assetsmanager",
+        "description": "assetsmanager 资源管理器",
+        "description_en": "AssetsManager",
         "files": [],
-        "root": "src/extension/resource",
-        "dependencies": [
-          "egret"
-        ]
+        "root": "",
+        "dependencies": []
       },
       {
         "name": "eui",
@@ -448,24 +442,6 @@
         "tag": "game,app,TypeScript",
         "description": "A Facebook game type",
         "description_en": "A Facebook game type",
-        "defaultWidth": 640,
-        "defaultHeight": 1136,
-        "modules": [
-          "egret",
-          "game",
-          "res",
-          "eui",
-          "tween"
-        ]
-      },
-      {
-        "name": "res-examples",
-        "displayName": "ResourceManager sample project",
-        "displayName_en": "ResourceManager sample project",
-        "language": "TypeScript",
-        "tag": "game,app,TypeScript",
-        "description": "ResourceManager sample project",
-        "description_en": "ResourceManager sample project",
         "defaultWidth": 640,
         "defaultHeight": 1136,
         "modules": [

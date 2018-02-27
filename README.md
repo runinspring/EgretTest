@@ -1,4 +1,3 @@
-12
 <p align="center">
     <img src="./docs/img/egret_logo.jpg"
          height="130">
@@ -13,7 +12,7 @@
              alt="stars">
     </a>
     <a href="https://github.com/egret-labs/egret-core">
-        <img src="https://img.shields.io/badge/version-5.0.15-green.svg"
+        <img src="https://img.shields.io/badge/version-5.1.5-green.svg"
              alt="version">
     </a>
     <a href="./LICENSE.md">
