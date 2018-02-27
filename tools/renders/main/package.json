@@ -1,0 +1,7 @@
+{
+  "name": "renders-app",
+  "private": true,
+  "main": "main.js",
+  "dependencies": {
+  }
+}
