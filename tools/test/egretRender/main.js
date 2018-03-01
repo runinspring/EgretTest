@@ -23,6 +23,7 @@ app.on('ready', () =>
         useContentSize: true,
         resizable: false,
         textAreasAreResizable: false,
+        webPreferences:{devTools:true}
     });
 
     mainWindow.loadURL(`file://${__dirname}/index.html`);

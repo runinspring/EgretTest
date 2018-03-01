@@ -26,7 +26,9 @@
 //  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 //////////////////////////////////////////////////////////////////////////////////////
-import { BrowserWindow } from 'electron'; 
+// import { BrowserWindow } from 'electron'; 
+// const electron = require('electron');
+import { remote } from 'electron';
 class Main extends eui.UILayer {
     protected createChildren(): void {
         super.createChildren();
@@ -74,10 +76,14 @@ class Main extends eui.UILayer {
      */
     protected createGameScene(): void {
         console.log('createGameScene')
-        var browserWindow = new BrowserWindow();
-        console.log('browserWindow',browserWindow);
+        var browserWindow = new remote.BrowserWindow({webPreferences:{devTools:true}});
+        var path = require('path');
+        console.log(path.join(__dirname),"../");
+        var ulrPath = path.resolve(__dirname, '../testRender')
+        browserWindow.loadURL(`file://${ulrPath}/index.html`);
+        console.log('browserWindow', browserWindow);
 
-        
+
         // this.startTest();
 
     }

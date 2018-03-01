@@ -73,6 +73,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 //////////////////////////////////////////////////////////////////////////////////////
+// import { BrowserWindow } from 'electron'; 
+// const electron = require('electron');
 var electron_1 = require("electron");
 var Main = (function (_super) {
     __extends(Main, _super);
@@ -149,7 +151,11 @@ var Main = (function (_super) {
      */
     Main.prototype.createGameScene = function () {
         console.log('createGameScene');
-        var browserWindow = new electron_1.BrowserWindow();
+        var browserWindow = new electron_1.remote.BrowserWindow({ webPreferences: { devTools: true } });
+        var path = require('path');
+        console.log(path.join(__dirname), "../");
+        var ulrPath = path.resolve(__dirname, '../testRender');
+        browserWindow.loadURL("file://" + ulrPath + "/index.html");
         console.log('browserWindow', browserWindow);
         // this.startTest();
     };
