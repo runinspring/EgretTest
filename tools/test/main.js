@@ -25,9 +25,9 @@ app.on('ready', () => {
         textAreasAreResizable: false,
         webPreferences: { devTools: true }
     });
-
-    mainWindow.loadURL(`file://${__dirname}/egretRender/index.html`);
-    // mainWindow.webContents.openDevTools();
+    mainWindow.loadURL(`file://${__dirname}/render/index.html`);
+    // mainWindow.loadURL(`file://${__dirname}/egretRender/index.html`);
+    mainWindow.webContents.openDevTools();
     ipcMain.on('egretReady', (event, arg) => {
         egretArg = arg;
         if(testEvent){
