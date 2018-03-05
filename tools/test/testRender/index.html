@@ -13,14 +13,18 @@
   <script src="mocha.js"></script>
   <script>mocha.setup('bdd');</script>
 <script src="chai.js"></script>
-<script src="../test/tests.js"></script>
+<script src="./test/tests.js"></script>
 <script>
   // console.log('iframe loaded')   
   const {ipcRenderer} = require('electron')
-  ipcRenderer.on('getEnv', (event, arg) => {
-    console.log(arg) // prints "pong"
+  // console.log('ipcRenderer',ipcRenderer)
+  ipcRenderer.on('startTest', (event, arg) => {
+    console.log('startTest11',arg.tt1) // prints "pong"
+    window.egret = arg.egret;
+    window.container = arg.container;
+    mocha.run();
   })
-  ipcRenderer.send('testRenderReady', 'ping')
+  ipcRenderer.send('testReady', 'ready')
   // function startTest() {
   //   console.log('startMocha')
   //   window.container = window.parent.document.egretContainer;

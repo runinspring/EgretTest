@@ -1,1 +1,0 @@
-### egret.d.ts 移除第一行的 declare var global: any;

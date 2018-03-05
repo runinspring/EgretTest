@@ -4,8 +4,7 @@
   "private": true,
   "author": "egret-labs",
   "scripts": {
-    "test": "electron tools/test/egretRender",
-    "renders2": "electron tools/test/renders"
+    "test": "electron tools/test"
   },
   "bin": {
     "egret": "./tools/bin/egret"

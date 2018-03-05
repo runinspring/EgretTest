@@ -150,13 +150,18 @@ var Main = (function (_super) {
      * Create scene interface
      */
     Main.prototype.createGameScene = function () {
-        console.log('createGameScene');
-        var browserWindow = new electron_1.remote.BrowserWindow({ webPreferences: { devTools: true } });
+        var browserWindow = new electron_1.remote.BrowserWindow({
+            width: 675, height: 400,
+            useContentSize: true,
+            resizable: false,
+            webPreferences: { devTools: true }
+        });
         var path = require('path');
-        console.log(path.join(__dirname), "../");
         var ulrPath = path.resolve(__dirname, '../testRender');
         browserWindow.loadURL("file://" + ulrPath + "/index.html");
-        console.log('browserWindow', browserWindow);
+        browserWindow.webContents.openDevTools();
+        var sendData = { 'egret': egret };
+        electron_1.ipcRenderer.send('egretReady', { 'egret': egret, 'container': this, 'tt1': 99876 });
         // this.startTest();
     };
     Main.prototype.startTest = function () {

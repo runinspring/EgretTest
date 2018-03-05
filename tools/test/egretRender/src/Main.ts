@@ -28,7 +28,7 @@
 //////////////////////////////////////////////////////////////////////////////////////
 // import { BrowserWindow } from 'electron'; 
 // const electron = require('electron');
-import { remote } from 'electron';
+import { remote, ipcRenderer } from 'electron';
 class Main extends eui.UILayer {
     protected createChildren(): void {
         super.createChildren();
@@ -75,29 +75,19 @@ class Main extends eui.UILayer {
      * Create scene interface
      */
     protected createGameScene(): void {
-        console.log('createGameScene')
-        var browserWindow = new remote.BrowserWindow({webPreferences:{devTools:true}});
+        var browserWindow = new remote.BrowserWindow({
+            width: 675, height: 400,
+            useContentSize: true,
+            resizable: false,
+            webPreferences: { devTools: true }
+        });
         var path = require('path');
-        console.log(path.join(__dirname),"../");
         var ulrPath = path.resolve(__dirname, '../testRender')
         browserWindow.loadURL(`file://${ulrPath}/index.html`);
-        console.log('browserWindow', browserWindow);
+        browserWindow.webContents.openDevTools();
+        var sendData = { 'egret': egret }
+        ipcRenderer.send('egretReady', { 'egret': egret, 'container': this, 'tt1': 99876 })
 
-
-        // this.startTest();
 
     }
-    private startTest() {
-        if (!window['testFrame'] || !window['testFrame'].window.startTest) {
-            setTimeout(() => { this.startTest() }, 1000);
-        } else {
-            // document.getElementById('testFrame').style.display = 'block'
-            var testFrame = document.getElementById('testFrame');
-            console.log('testFrame', testFrame)
-            document['egretContainer'] = this;
-            document['egret'] = egret;
-            window['testFrame'].window.startTest();
-        }
-    }
-
 }

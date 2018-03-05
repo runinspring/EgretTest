@@ -12,9 +12,11 @@
     },
     "include": [
         "src",
-        "libs"
+        "libs",
+        "typings"
     ],
     "exclude": [
+        "libs/modules",
         "node_modules"
     ]
 }
