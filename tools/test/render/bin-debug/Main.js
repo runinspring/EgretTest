@@ -149,6 +149,8 @@ var Main = (function (_super) {
      */
     Main.prototype.createGameScene = function () {
         console.log('crate');
+        window['container'] = this;
+        window['mocha'].run();
         // var browserWindow = new remote.BrowserWindow({
         //     width: 675, height: 400,
         //     useContentSize: true,

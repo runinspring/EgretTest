@@ -2380,7 +2380,9 @@ function HTML(runner) {
 
     // suite
     var url = self.suiteURL(suite);
-    var el = fragment('<li class="suite"><h1><a href="%s">%s</a></h1></li>', url, escape(suite.title));
+    // var el = fragment('<li class="suite"><h1><a href="%s">%s</a></h1></li>', url, escape(suite.title));
+    var el = fragment('<li class="suite"><h1><a href="%s">%s</a></h1></li>', '', escape(suite.title));
+    
 
     // container
     stack[0].appendChild(el);
@@ -2418,11 +2420,14 @@ function HTML(runner) {
     var el;
     if (test.state === 'passed') {
       var url = self.testURL(test);
-      el = fragment('<li class="test pass %e"><h2>%e<span class="duration">%ems</span> <a href="%s" class="replay">‣</a></h2></li>', test.speed, test.title, test.duration, url);
+      // el = fragment('<li class="test pass %e"><h2>%e<span class="duration">%ems</span> <a href="%s" class="replay">‣</a></h2></li>', test.speed, test.title, test.duration, url);
+      el = fragment('<li class="test pass %e"><h2>%e<span class="duration">%ems</span> </h2></li>', test.speed, test.title, test.duration, url);
     } else if (test.pending) {
       el = fragment('<li class="test pass pending"><h2>%e</h2></li>', test.title);
     } else {
-      el = fragment('<li class="test fail"><h2>%e <a href="%e" class="replay">‣</a></h2></li>', test.title, self.testURL(test));
+      // el = fragment('<li class="test fail"><h2>%e <a href="%e" class="replay">‣</a></h2></li>', test.title, self.testURL(test));
+      //注销掉了跳转链接
+      el = fragment('<li class="test fail"><h2>%e </h2></li>', test.title, self.testURL(test));
       var stackString; // Note: Includes leading newline
       var message = test.err.toString();
 

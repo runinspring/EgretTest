@@ -76,6 +76,8 @@ class Main extends eui.UILayer {
      */
     protected createGameScene(): void {
         console.log('crate');
+        window['container'] = this;
+        window['mocha'].run();
         // var browserWindow = new remote.BrowserWindow({
         //     width: 675, height: 400,
         //     useContentSize: true,
