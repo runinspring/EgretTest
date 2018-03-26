@@ -2380,8 +2380,8 @@ function HTML(runner) {
 
     // suite
     var url = self.suiteURL(suite);
-    // var el = fragment('<li class="suite"><h1><a href="%s">%s</a></h1></li>', url, escape(suite.title));
-    var el = fragment('<li class="suite"><h1><a href="%s">%s</a></h1></li>', '', escape(suite.title));
+    var el = fragment('<li class="suite"><h1><a href="%s">%s</a></h1></li>', url, escape(suite.title));
+    // var el = fragment('<li class="suite"><h1><a href="%s">%s</a></h1></li>', '', escape(suite.title));
     
 
     // container

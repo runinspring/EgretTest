@@ -78,6 +78,7 @@ class Main extends eui.UILayer {
         console.log('crate');
         window['container'] = this;
         window['mocha'].run();
+        this.removeChildren();
         // var browserWindow = new remote.BrowserWindow({
         //     width: 675, height: 400,
         //     useContentSize: true,
@@ -90,7 +91,5 @@ class Main extends eui.UILayer {
         // browserWindow.webContents.openDevTools();
         // var sendData = { 'egret': egret }
         // ipcRenderer.send('egretReady', { 'egret': egret, 'container': this, 'tt1': 99876 })
-
-
     }
 }
