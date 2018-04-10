@@ -1,7 +1,7 @@
 'use strict';
 
 const electron = require('electron');
-const app = electron.app;  // Control application life
+const app = electron.app;  // Control application life1
 const ipcMain = electron.ipcMain;
 const BrowserWindow = electron.BrowserWindow;  // Native browser window3
 
