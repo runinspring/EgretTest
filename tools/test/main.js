@@ -3,7 +3,7 @@
 const electron = require('electron');
 const app = electron.app;  // Control application life
 const ipcMain = electron.ipcMain;
-const BrowserWindow = electron.BrowserWindow;  // Native browser window
+const BrowserWindow = electron.BrowserWindow;  // Native browser window3
 
 // Keep a global reference of the window object
 let mainWindow = null;
